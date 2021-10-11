@@ -41,6 +41,7 @@ class _LoginState extends State<Login> {
                       border:
                           OutlineInputBorder(borderSide: BorderSide(width: 1))),
                 ),
+//                 divider to split between widgets
                 Divider(),
                 TextFormField(
                   // is password field
