@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       home: Login(),
 //       show and hide debug banner
       debugShowCheckedModeBanner: false,
+//       create root for login page
       routes: {"login": (context) => Login()},
     );
   }
