@@ -67,7 +67,9 @@ class _LoginState extends State<Login> {
                         "Click here",
                         style: TextStyle(color: Colors.blueAccent),
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushNamed("signup");
+                      },
                     )
                   ],
                 ),
