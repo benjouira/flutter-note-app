@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:note_app/auth/login.dart';
+import 'package:note_app/auth/signup.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,14 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-       
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          buttonColor: Colors.red,
+          textTheme: TextTheme(
+              headline1: TextStyle(fontSize: 20, color: Colors.white))),
       home: Login(),
-//       show and hide debug banner
       debugShowCheckedModeBanner: false,
-//       create root for login page
-      routes: {"login": (context) => Login()},
+      routes: {"login": (context) => Login(), "signup": (context) => Signup()},
     );
   }
 }
