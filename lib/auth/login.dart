@@ -37,6 +37,7 @@ class _LoginState extends State<Login> {
                       prefix: Icon(
                         Icons.person,
                       ),
+//                     text inside the textfield
                       hintText: "username",
                       border:
                           OutlineInputBorder(borderSide: BorderSide(width: 1))),
