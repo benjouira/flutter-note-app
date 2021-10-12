@@ -37,12 +37,10 @@ class _LoginState extends State<Login> {
                       prefix: Icon(
                         Icons.person,
                       ),
-//                     text inside the textfield
                       hintText: "username",
                       border:
                           OutlineInputBorder(borderSide: BorderSide(width: 1))),
                 ),
-//                 divider to split between widgets
                 Divider(),
                 TextFormField(
                   // is password field
@@ -82,7 +80,6 @@ class _LoginState extends State<Login> {
                   ),
                   color: Colors.amber[400],
                 ),
-              
               ],
             )),
           )
