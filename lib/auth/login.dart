@@ -75,7 +75,9 @@ class _LoginState extends State<Login> {
                 ),
                 Divider(),
                 MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed("homepage");
+                  },
                   child: Text(
                     "Login",
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
