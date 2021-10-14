@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:note_app/auth/login.dart';
 import 'package:note_app/auth/signup.dart';
+import 'package:note_app/home/homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +22,11 @@ class MyApp extends StatelessWidget {
               headline1: TextStyle(fontSize: 20, color: Colors.white))),
       home: Login(),
       debugShowCheckedModeBanner: false,
-      routes: {"login": (context) => Login(), "signup": (context) => Signup()},
+      routes: {
+        "login": (context) => Login(),
+        "signup": (context) => Signup(),
+        "homepage": (context) => HomePage()
+      },
     );
   }
 }
