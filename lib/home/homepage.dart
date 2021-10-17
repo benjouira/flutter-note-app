@@ -3,7 +3,7 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -21,16 +21,28 @@ class _HomePageState extends State<HomePage> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Home page"),
-      ),
-      body: Container(
-        child: ListView.builder(
-            itemCount: notes.length,
-            itemBuilder: (context, i) {
-              return ListNotes(nt: notes[i]);
-            }),
+    return Directionality(
+      // el directionality nesta3mlouha bach n7awlou el lou8a ll 3arbi
+      //twali el app mn limin ll ysar
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Home page"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            Navigator.of(context).pushNamed("addnotes");
+          },
+        ),
+        body: Container(
+          child: ListView.builder(
+              itemCount: notes.length,
+              itemBuilder: (context, i) {
+                return Dismissible(
+                    key: Key("$i"), child: ListNotes(nt: notes[i]));
+              }),
+        ),
       ),
     );
   }
@@ -44,12 +56,19 @@ class ListNotes extends StatelessWidget {
     return Card(
       child: Row(
         children: [
-          Expanded(flex: 1, child: Image.network("./images/1.jpg")),
+          Expanded(
+              flex: 1,
+              child: Image.network(
+                "lib/images/${nt['image']}",
+                fit: BoxFit.fill,
+              )),
           Expanded(
             flex: 2,
             child: ListTile(
-                title: Text("${nt['note']}"),
-                trailing: IconButton(onPressed: () {}, icon: Icon(Icons.edit))),
+              title: Text("Title"),
+              subtitle: Text("${nt['note']}"),
+              trailing: IconButton(onPressed: () {}, icon: Icon(Icons.edit)),
+            ),
           ),
         ],
       ),
