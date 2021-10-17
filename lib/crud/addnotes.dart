@@ -1,6 +1,10 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
+// wa9t nzidou package jdid lazem na3mlou flutter clear
+//besh yetfasakh folder el build, mba3d n3awdou run ll project
+//bech y3awed yetsno3 fih el package ejdid
 
 class AddNotes extends StatefulWidget {
   AddNotes({Key? key}) : super(key: key);
@@ -55,7 +59,18 @@ class _AddNotesState extends State<AddNotes> {
                     color: Colors.purple,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 30, vertical: 10),
-                    onPressed: () {})
+                    onPressed: () {
+                      AwesomeDialog(
+                        context: context,
+                        dialogType: DialogType.INFO,
+                        animType: AnimType.BOTTOMSLIDE,
+                        title: 'Dialog Title',
+                        desc:
+                            'wa9t nzidou package jdid lazem na3mlou flutter clear besh yetfasakh folder el build, mba3d n3awdou run ll project',
+                        btnCancelOnPress: () {},
+                        btnOkOnPress: () {},
+                      ).show();
+                    })
               ],
             ))
           ],
