@@ -65,10 +65,31 @@ class _AddNotesState extends State<AddNotes> {
                         dialogType: DialogType.INFO,
                         animType: AnimType.BOTTOMSLIDE,
                         title: 'Dialog Title',
-                        desc:
-                            'wa9t nzidou package jdid lazem na3mlou flutter clear besh yetfasakh folder el build, mba3d n3awdou run ll project',
+                        desc: 'Dialog description here.............',
                         btnCancelOnPress: () {},
                         btnOkOnPress: () {},
+                      ).show();
+                    }),
+                MaterialButton(
+                    child: const Text("body inside alert"),
+                    color: Colors.purple,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 10),
+                    onPressed: () {
+                      AwesomeDialog(
+                        context: context,
+                        dialogType: DialogType.QUESTION,
+                        animType: AnimType.BOTTOMSLIDE,
+                        title: 'Dialog Title',
+                        body: TextFormField(
+                          decoration: const InputDecoration(
+                              hintText: "widget inside alert",
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.green))),
+                        ),
+                        btnCancelOnPress: () {},
+                        btnOkOnPress: () {},
+                        btnCancelColor: Colors.red[500],
                       ).show();
                     })
               ],
