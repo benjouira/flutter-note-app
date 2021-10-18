@@ -2,7 +2,7 @@
 
 
 flutter Packages:
-after adding new package we need to run flutter clear in terminal
+after adding new package we need to run flutter clean in terminal
 this will delete the build folder, then, we stop and start debugging the project again
 and this will create the new build folder with the new package
 
